@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/1b18b23329.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://demo.sirv.com/ebay/css-fadeshow.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">  
+    <link rel="icon" type="image/png" href="img/LOGO.png">
+    <title>Blog Post</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+      
+      a{
+        text-decoration:none
+      }
+      .blog-header{
+        position:relative;
+        overflow:hidden;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        height:50vw;
+        min-height:400px;
+        max-height:550px;
+        min-width:300px;
+        color:#eee;
+      }
+      .blog-header:after{
+        content:"";
+        width:100%;
+        height:100%;
+        position:absolute;
+        bottom:0;
+        left:0;
+        z-index:-1;
+       background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+      }
+      .blog-header:before{
+        content:"";
+        width:100%;
+        height:200%;
+        position:absolute;
+        top:0;
+        left:0;
+          -webkit-backface-visibility: hidden;
+          -webkit-transform: translateZ(0); backface-visibility: hidden;        
+        transform: translateZ(0);
+        background:#1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat;
+        background-size:100%;
+        background-attachment:fixed;
+        animation: grow 80s  linear 10ms infinite;
+        transition:all 0.4s ease-in-out;
+        z-index:-2
+      }
+      .blog-header a{
+        color:#eee
+      }
+      
+      
+      .sides, .info{
+        flex: 0 0 auto;
+        width:50%
+      }
+      .info{
+        width:100%;
+        padding:15% 10% 0 10%;
+        color: whitesmoke;
+        font-family: 'Josefin Sans', sans-serif;
+        text-align:center;
+        text-shadow:0 4px 5px rgba(0, 0, 0, 0.6)
+      }
+
+            
+      .info h4{
+        font-size:0.7em
+      }
+
+      h1,h2,h3,h4{
+        font-family:'Josefin Sans', sans-serif;
+      }
+      
+      @keyframes grow{
+        0% { transform: scale(1) translateY(0px)}
+        50% { transform: scale(1.2) translateY(-400px)}
+      }
+      .blog-content{  
+        padding:5% 5%;
+        text-align:justify;
+        color:black;
+        line-height: 1.9;
+      }
+
+      
+      
+      
+      .twtr{
+        margin-top:100px
+      }.btn.twtr:after{content:"\1F426";padding-left:5px}
+
+      .blog-img{
+        width: 500px;
+        height: 250px;
+        margin-left: 35px;
+        margin-bottom: 30px;
+        
+      }
+
+      .two-sec-content p{
+        left: 20px;
+        top: 20px;
+        margin-bottom: 70px;
+      }
+
+      .three-sec{
+        display: inline-block;
+        text-align: center;
+      }
+
+      .slide-container {
+        width: 1100px;
+        height:400px;
+        top: 0;
+        left: 0;
+      }
+      .slide-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        text-align: center;
+        text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        z-index: 1;
+        transform: translate(-50%, -50%);
+      }
+      .slide-content p {
+        font-size: calc(1rem + 10 * (100vw - 375px)/ (1199 - 375));
+        font-weight: 100;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+      }
+      fs-slides h1,
+      fs-slides h2 {
+      margin-top: 0;
+      font-size: calc(2rem + 28 * (100vw - 375px)/ (1199 - 375));
+      margin-bottom: 0.2em;
+      font-weight: bold;
+      }
+
+      fs-slides a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      fs-slides a:hover {
+        color: black;
+      }
+      @media (min-width: 1200px) {
+        fs-slides h1,
+        fs-slides h2 {
+        font-size: 60px;
+        }
+        .slide-content p {
+          font-size: 26px;
+        }
+      }
+
+      .one{
+        text-align: justify;
+        margin-top: 100px;
+        margin-bottom: 70px;
+        
+      }
+
+      
+
+      .column {
+        height: 343px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      
+
+      #col-places {
+        justify-content: space-around;
+        height: 70rem;
+        background: rgba(201, 201, 201, 0.289);
+        backdrop-filter: blur(20px);
+        text-align: center;
+        border-radius: 13px;
+        box-shadow: 0 0 8px rgba(134, 134, 134, 0.559);
+        
+      }
+      
+      .col-text {
+        padding: 0px 30px;
+      }
+
+      .col-text p{
+        text-align: justify;
+        font-size: 14px;
+      }
+
+
+      #col-places img {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+      .col-images {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+      }
+      .col-images div div {
+        height: 180px;
+      }
+
+      .col-images > * {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+      }
+      
+      #col-card-info {
+        width: 400px;
+        height: auto;
+        padding: 20px 20px;
+        flex-flow: row;
+        margin: 40px auto;
+        border-radius: 12px;
+        background: #ffb133;
+        border-bottom: 5px solid #411509;
+        color: #411509;
+      }
+      #col-card-info .card-info {
+        text-align: left;
+      }
+      #profle-img {
+        width: 500px;
+        height: 200px;
+        margin-right: 20px;
+      }
+      #profle-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+        #col-card-info p {
+          font-style: italic;
+        }
+        @media screen and (max-width: 600px) {
+          #col-places {
+          padding-top: 30px;
+          height: auto;
+        }
+
+        .col-images {
+          flex-direction: column;
+          gap: 30px;
+        }
+        .col-text {
+          padding: 0px 20px;
+        }
+        #profle-img {
+          width: 250px;
+          height: 150px;
+          margin-right: 20px;
+        }
+
+        #col-card-info {
+          width: auto;
+          margin: 30px 10px 70px;
+        }
+      } 
+
+      .reaction-wrapper{
+        box-shadow: 0 0 5px rgba(77, 128, 159, 0.39);
+        background: rgba(113, 149, 176, 0.473);
+        border-radius: 13px;
+        backdrop-filter: blur(20px);
+        width: 80%;
+        height: 100px;
+        margin-left: 130px;
+      }
+
+      .avatar {
+        position: relative;
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+      }
+      
+      .avatar-img,
+      .avatar-initials,
+      .avatar-placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+      }
+      
+      .avatar-img {
+        display: block;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+      
+      .avatar-initials {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        line-height: 0;
+        background-color: #a0aec0;
+      }
+      
+      .avatar-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #a0aec0
+          url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='%23fff' d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z'/%3e%3c/svg%3e")
+          no-repeat center/1.75rem;
+      }
+      
+      .avatar-indicator {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 20%;
+        height: 20%;
+        display: block;
+        background-color: #a0aec0;
+        border-radius: 50%;
+      }
+      
+      .avatar-group {
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+      }
+      
+      .avatar-group .avatar + .avatar {
+        margin-left: -0.75rem;
+      }
+      
+      .avatar-group .avatar:hover {
+        z-index: 1;
+        
+      }
+      
+      
+      .avatar-light .avatar-indicator {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75);
+      }
+      
+      .avatar-group-light > .avatar {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75);
+      }
+      
+      .avatar-dark .avatar-indicator {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+      }
+      
+      .avatar-group-dark > .avatar {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+      }
+
+      
+      
+      .post {
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        transition: transform 0.3s ease;
+      }
+      
+      .post:hover {
+        transform: translateX(5px);
+      }
+      
+      .post img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .post h3 {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+      
+      .post p {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+      
+      .read-more {
+        display: block;
+        margin-top: 10px;
+        color: #000000;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      .read-more:hover {
+        color: #03c4ff;
+      }
+      
+
+
+      
+      
+
+
+
+      
+      
+      
+      
+    </style>
+
+</head>
+<body>
+    <header>    
+        <div class="logo">
+          <a href="Index.html">
+              <img src="img/LOGO.png" width="120px">
+          </a>
+        </div>
+    
+        <nav>
+          <ul>
+              <li><a href="Index.html">Home</a></li>
+              <li>                
+                  <div class="dropdown">
+                    <a href="#" class="dropbtn">Places
+                      <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i>
+                    </a>
+    
+                    <div class="dropdown-content">
+                      <a href="#">All </a>                        
+                      <a href="#">North America </a>
+                      <a href="#">South America </a>
+                      <a href="#">Europe</a><br>
+                      <a href="#">Asia </a>
+                      <a href="#">South-East Asia </a>                        
+                      <a href="#">Australia </a>
+                    </div>
+                  </div>
+    
+              </li>
+              
+              
+              <li><a href="Aboutus.html">About Us</a></li>
+              <li><a href="Contact.html">Contact</a></li>        
+          </ul>
+        </nav>
+    
+        <div class="mix">
+              <form action="" class="searchbar">
+                  <input type="text" placeholder="Search.....">
+                  <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff; "></i>
+                  </button>            
+              </form>         
+          
+        </div>
+    
+        <div>
+          <input type="checkbox" id="started">
+          
+            <label for="started" class="Custom-btn LoginBtn1" >
+              <center>       
+                <Span>LOGIN</Span>
+              </center>
+              
+            </label>   
+         
+            <div class="pop-up">
+              <label for="started" class="close-btn fa fa-times"> </label>
+              
+              <div class="text">Login to continue</div>
+              <form action="#">
+                <div class="data">
+                  <label>Email or Phone Number</label>
+                  <input type="email" required>
+                </div>
+    
+                <div class="data">
+                  <label>Password</label>
+                  <input type="password" required>
+                </div>
+    
+                <div class="forget-pass"><a href="#">Forget Password?</a> </div>
+    
+                <div class="social-platform">
+                  <center>
+                    <p>Or Login with</p>
+                    <div class="social-icons">
+                      <a href="#" class="fa fa-facebook"></a>
+                      <a href="#" class="fa fa-google"></a>
+                      <a href="#" class="fa fa-twitter"></a>
+                    </center>
+    
+                  </div>
+    
+                  <div class="btn">
+                    <div class="inner"></div>
+                    <div>
+                      <button><a href="afterlogin.html"  style="text-decoration: none; color:white; font-weight:700; font-size:15px;">Login</a></button>
+                    </div>
+                  </div>
+    
+                  <center>
+                    <div class="signup-link">Don't have an account? <a href="SignUp.html">Signup now</a></div>
+                  </center>	
+                </form>
+              </div>
+            </div>
+          </div> 
+    </header>
+
+    <div class="blog-header">      
+      <div class="info">
+        
+        <h1>Heading to Switzerland : </h1> <br>
+        <h1>A Dreamy Alpine Vacation In Europe</h1>
+        
+      </div>
+    </div>
+
+    <section class="blog-content">
+      <div style="margin-bottom: 100px;">
+        <p>Mountains never disappointed a single soul! Whosoever ventured into its vast embrace was duly rewarded with comforting sojourn thriving amidst its secret charm. Geographical locations and accessibility of mountains in Europe have made them popular and mainstream. And Switzerland mountains tower above them all! If you are eyeing the winter magic in Northern Hemisphere, Switzerland is the place to be.
+
+          Be it a leisure holiday, solo backpacking trip, or a romantic honeymoon, Switzerland mountains have a proposition for everyone! I’d term it as the Mecca for the thrill and extreme adventure in Europe. Therefore, it is highly recommended not leave without Switzerland with visiting a mountaintop or two. As you look at the vibrant mountain spaces, pristine lakes, historic chapels and museums, and gourmet restaurants would account for lovely time spent.
+          
+          To ensure smooth and hassle-free movement in the mountains in Switzerland, the tourism department runs cable cars, funiculars, and cogwheel trains making the ride smoother.
+        </p>
+      </div>
+
+      <div data-aos="fade-up">
+        <div class="two-sec">
+          <center>
+            <h2>Best Time To Visit Switzerland Mountains</h2>
+          </center>
+          <img src="img/s1.jpg" class="blog-img">
+          <img src="img/mtlake.jpg" class="blog-img">
+  
+          <div class="two-sec-content">
+            <p >If you are a snow lover December – March is the perfect time to visit Switzerland. With snowfall at its peak and views of spotless white around this is the time that attracts the tourists the most. April – May is the low season with not too many ski resorts around but all the hiking trails are opened and this is the perfect time for solo travellers and backpackers to explore! July – September is the summer season in Switzerland and an ideal time for outdoor activities. Further, October – November is the low season for tourism! Make your choice, Switzerland is a year-round destination.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="three-sec">
+        <center>
+          <h2>Most Popular Places in Switzerland Mountains</h2>
+        </center>
+
+        <div class="slide-container">
+          <div data-am-fadeshow="quick-nav prev-next-nav">
+      
+            <!-- Radio -->
+            <input type="radio" name="css-fadeshow" id="slide-1" />
+            <input type="radio" name="css-fadeshow" id="slide-2" />
+            <input type="radio" name="css-fadeshow" id="slide-3" />
+            <input type="radio" name="css-fadeshow" id="slide-4" />
+            <input type="radio" name="css-fadeshow" id="slide-5" />
+      
+            <!-- Slides -->
+            <div class="fs-slides">
+              <div class="fs-slide" style="background-image: url(img/sl1.jpg);">
+                <div class="slide-content">
+                  <h1>The Matterhorn</h1>
+                </div>
+              </div>
+              <div class="fs-slide" style="background-image: url(img/sl2.jpg);">
+                    <div class="slide-content">
+                  <h1>Jungfrau region</h1>
+                </div>		  
+                
+              </div>
+              <div class="fs-slide" style="background-image: url(img/sl3.jpg);">
+                          <div class="slide-content">
+                  <h1>Château De Chillon</h1>
+                </div>
+                
+              </div>
+              <div class="fs-slide" style="background-image: url(img/sl4.jpg);">
+                <div class="slide-content">
+                  <h1>St. Moritz</h1>
+                </div>
+              </div>
+              <div class="fs-slide" style="background-image: url(img/sl5.jpg);">
+                                    <div class="slide-content">
+                  <h1>Stanserhorn</h1>
+                </div>
+                
+              </div>
+            </div>
+      
+            <!-- Quick Navigation -->
+            <div class="fs-quick-nav">
+              <label class="fs-quick-btn" for="slide-1"></label>
+              <label class="fs-quick-btn" for="slide-2"></label>
+              <label class="fs-quick-btn" for="slide-3"></label>
+              <label class="fs-quick-btn" for="slide-4"></label>
+              <label class="fs-quick-btn" for="slide-5"></label>
+            </div>
+      
+            <!-- Prev Navigation -->
+            <div class="fs-prev-nav">
+              <label class="fs-prev-btn" for="slide-1"></label>
+              <label class="fs-prev-btn" for="slide-2"></label>
+              <label class="fs-prev-btn" for="slide-3"></label>
+              <label class="fs-prev-btn" for="slide-4"></label>
+              <label class="fs-prev-btn" for="slide-5"></label>
+            </div>
+      
+            <!-- Next Navigation -->
+            <div class="fs-next-nav">
+              <label class="fs-next-btn" for="slide-1"></label>
+              <label class="fs-next-btn" for="slide-2"></label>
+              <label class="fs-next-btn" for="slide-3"></label>
+              <label class="fs-next-btn" for="slide-4"></label>
+              <label class="fs-next-btn" for="slide-5"></label>
+            </div>
+      
+            <!-- Slide Counter -->
+            <div class="fs-slide-counter">
+              <span class="fs-slide-counter-current"></span>/<span class="fs-slide-counter-total"></span>
+            </div>
+      
+          </div>
+
+          <div class="three-sec-content">
+            <div class="one">
+              <h3>1. The Matterhorn</h3>
+              <p>
+                The quaint little town of Zermatt is known for its breathtaking views and vibrant houses. One of the most stunning places to visit in Switzerland mountainside, Zermatt will make you fall for it at the first sight. is a car-free town, which means you must leave your car in Taesch, a little village close to Zermatt. Hailed as the glacier paradise, Matterhorn boasts of stunning mountain peaks. <br>
+                As many as 38 of them are 4000 meters plus. On a good day, you can also get lucky with the views of Mont Blanc – the highest mountain in Europe. If you are looking for more action the ride the highest cable car station in Europe at Klein Matterhorn. It is 4,000 meters high. <br> <br>
+                <b>How to reach Zermatt: </b> Zermatt is a 3.5 hours ride from Zurich and 4 hours ride from Geneva. Glacier express also runs directly to the Zermatt town. Tasch is the last accessible point by automobile. From there on shuttle plies every 30 minutes to the foothills of the town. Hiking and cycling are the other options preferred by travelers to reach the mountain resort town. <br> <br>
+                <b>Popular attractions in Zermatt:  </b>Flower shops in Zermatt Town, Gorner Gorge – 220 million years old, Vispa River, and Glacier Palace Museum <br> <br>
+                <b>Places to stay in Zermatt: </b> Hotel Matthiol, Sunstar Style Hotel Zermatt, Schlosshotel Life & Style, Best Western PLUS Alpen Resort Hotel, and Alpenlodge
+              </p>
+            </div>
+
+            <div class="one">
+              <h3>2. Jungfrau region</h3>
+              <p>                
+                The sparsely populated land of Jungfrau has everything special about it. Talk about its vast meadows, picturesque towns, hamlets and the famed glacial straddle, and you won’t feel like stopping. Interlaken is the most popular of them all as nature’s wonderous escapades and vantage points adorn it subtly. Jungfraujoch is the highest train station in Europe almost 700 meters below Jungfrau Peak <br> <br>
+                <b>How to reach  Jungfrau region: </b> Cogwheel mountain train plies every half an hour from Kleine Scheidegg to Jungfrau. Kleine Scheidegg can be reached from Grindelwald which is again half hour journey by train. Grindelwald is well-connected with Zurich International Airport by road or train. <br> <br>
+                <b>Popular attractions in  Jungfrau region:  </b>Jungfrau Park, Brienz and Thul Boat Tours, Hoheweg, Lauterbrunnen & Lauterbrunnen Waterfalls, Schilthorn, Gimmelwald, Wengen, Grindelwald Ski Resort – watch out for World Snow Festival if you are traveling here in January, Gletscherschlucht (Glacier Ravine) <br> <br>
+                <b>Places to stay in  Jungfrau region: </b> Hotel Eiger, Hotel Jungfrau Hotel, Eiger Guesthouse Mürren, and Hotel Spinne Grindelwald.
+              </p>
+            </div>
+
+            <div class="one">
+              <h3>3. Château De Chillon</h3>
+              <p>                
+                This beautiful castle from medieval times is meticulously outlined by the gorgeous Lake Geneva. The iconic building has been revamped and reconstructed over the years and yet exudes lazy elegance. The castle serves as the perfect choice for a day tour in the Switzerland mountains. Stay in a mountain cabin there to marvel the incredible views of Lake Geneva. Don’t forget to ride a Swiss Chocolate Train! <br> <br>
+                <b>How to reach  Château De Chillon: </b> Direct trains are available from Geneva to Montreux. Château de Chillon is 4 km far from Montreux station. You can walk along the lakefront or take a local bus or train to reach Château de Chillon. Besides, Geneva to Montreux can also be reached by train, car, or a bus. <br> <br>
+                <b>Available Time:  </b>10 am – 4 pm (November to February), 9:30 am – 5 pm (October – March), 9 am – 6 pm from (April – September)<br> <br>
+                <b>Places to stay in  Jungfrau region: </b> Hotel & Spa Bristol, Hotel du Grand Lac Excelsior, Golf-Hotel Rene Capt, Hotel Victoria, and Hotel du Quai
+              </p>
+            </div>
+
+            <div class="one">
+              <h3>4. St. Moritz</h3>
+              <p>                
+                Take a walk by Lake Staz early morning and feel the crisp Swiss mountain air, St. Moritz is the place for nature seekers. Shrouded in a sheet of white, this place could rightly be the highlight of your memorable trip to the Switzerland mountains. If you are on an exploration spree, head to the historic churches and museums, and do take a note of the fine architecture around.<br> <br>
+                <b>How to reach  St. Moritz: </b>  It takes 2 hours and 45 minutes from Zurich or Milan to St. Moritz, and 4 hours from Munich by road <br> <br>
+                <b>Popular attractions in  St. Moritz:  </b>Cresta Run ride, Segantini Museum, Muottas Muragl, Engadine, Diavolezza, and The Leaning Tower Engadin<br> <br>
+                <b>Places to stay in  St. Moritz: </b> Hauser Hotel St. Moritz, Crystal Hotel, Hotel Schweizerhof, and Art Boutique Hotel Monopol
+              </p>
+            </div>
+
+            <div class="one">
+              <h3>5. Stanserhorn</h3>
+              <p>                
+                Incredible experiences are what this Switzerland mountain town is made up of! Be it scenic dining, memorable hiking, or an exciting funicular ride, Stanserhorn rightly suffices for a wonderful Switzerland mountainside.<br> <br>
+                <b>How to reach  Stanserhorn: </b>  Stanserhorn is a 20-minute drive from Lucerne and can be reached by train or car easily. Lucerne is well connected to Zurich and Bern by air as well as rail.<br> <br>
+                <b>Popular attractions in Stanserhorn:  </b>Candlelight dinner at CabriO, double-decker cable car ride in CabriO, boat ride and water sports at Lucerne Bay, and Richard Wagner Museum<br> <br>
+                <b>Places to stay in  Stanserhorn: </b> Hotel Engel, Hotel Stanserhof, Hotel Winkelried, Seehotel Pilatus, and Seehotel Belvedere
+              </p>
+            </div>
+
+            <p style="text-align: justify;">
+              Also, the Swiss National Park, the Canton Vaud wineries, Jura Mountains, Vaudoise Alps, the city of Lausanne, and Lugano are the keepers of some amazing heart-warming attractions that make them a hot favourite for every traveller visiting Switzerland! Mark them!!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">      
+        <div style="margin-top: 130px;">
+          <div>
+            <center>
+              <h1>Travel Tips</h1>
+            </center>
+          </div>
+            <div class="column" id="col-places">            
+              <div class="col-images">
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+                    <h5>Plan your trip in advance</h5>
+                  </div>
+                  <p>Research and plan your itinerary, considering the specific mountains in Switzerland that you want to visit. This will help you make the most of your time and ensure you don't miss out on any must-see locations.</p>
+                </div>
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1625716741174-6671d4a8027f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGluZGlhJTIwdG91cnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60">
+                    <h5>Check the weather conditions</h5>
+                  </div>
+                  <p>Mountain weather can be unpredictable, so be sure to check the weather forecast before heading out. This will help you prepare for any potential changes and ensure your safety during your mountain adventures.</p>
+                </div>
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1629723248038-8b3bc1ecce29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80">
+                    <h5>Dress appropriately </h5>
+                  </div>
+                  <p>The weather in the mountains can vary, so dress in layers and wear appropriate clothing for the conditions. It's essential to have a waterproof and windproof outer layer, as well as sturdy hiking boots. Don't forget to bring a hat, gloves, and sunglasses to protect yourself from the sun. </p>
+                </div>
+              </div>
+
+              <div class="col-images">
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+                    <h5>Stay hydrated</h5>
+                  </div>
+                  <p>When exploring the mountains, it's crucial to stay hydrated, even if you don't feel thirsty. Carry a reusable water bottle and drink regularly to avoid dehydration, especially at higher altitudes.</p>
+                </div>
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1625716741174-6671d4a8027f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGluZGlhJTIwdG91cnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60">
+                    <h5>Follow hiking trails and safety guidelines</h5>
+                  </div>
+                  <p>Stick to designated hiking trails and follow all safety guidelines. Pay attention to any warning signs or instructions from local authorities. It's important to respect the natural environment and wildlife while enjoying your hiking adventures.</p>
+                </div>
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1629723248038-8b3bc1ecce29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80">
+                    <h5>Carry essential supplies</h5>
+                  </div>
+                  <p>Pack a backpack with essential supplies such as sunscreen, insect repellent, a first aid kit, a map or GPS device, and snacks. It's also advisable to have a fully charged mobile phone and a portable charger for emergencies. </p>
+                </div>
+              </div>
+
+              <div class="col-images">
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWF8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+                    <h5>Respect the local culture and environment</h5>
+                  </div>
+                  <p>The Golden temple is famous for its full golden dome, it is one of the most sacred pilgrim spots for Sikhs</p>
+                </div>
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1625716741174-6671d4a8027f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGluZGlhJTIwdG91cnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60">
+                    <h5>Stay informed about mountain conditions</h5>
+                  </div>
+                  <p>Stay updated with the latest information about the mountain conditions, hiking trails, and any potential risks. Consult local visitor centers, check online resources, and seek advice from experienced mountaineers or guides.</p>
+                </div>
+                <div class="col-text">
+                  <div>
+                    <img src="https://images.unsplash.com/photo-1629723248038-8b3bc1ecce29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80">
+                    <h5>Capture the memories</h5>
+                  </div>
+                  <p>Don't forget to capture the breathtaking scenery and unforgettable moments during your journey. Take plenty of photos and create lasting memories of your adventure in the Switzerland mountains. </p>
+                </div>
+              </div>              
+            </div>              
+          </div>
+        </div>        
+      </div>
+    </div>      
+  </section>
+
+    
+        <div class="reaction-wrapper">
+          <div style="padding-top:35px; ">
+            <div style="width: 100px; height:40px; background-color:rgb(245, 250, 255); border:1px solid rgba(197, 146, 146, 0.665); border-radius:10px; text-align:center; display:inline-block; margin-right: 150px; margin-left: 180px; ">
+              <i class="fa-regular fa-heart heartIcon" onclick="changeIcon()" style="color: #b5052e; font-size:24px; padding:6px;"></i>
+              <span style="font-size: 18px; color: #b5052e;">Like</span>
+            </div>
+          
+            <div style="width: 100px; height:40px; background-color:rgb(245, 250, 255); border:1px solid rgba(101, 98, 98, 0.648); border-radius:10px; text-align:center; display:inline-block; padding:6px; margin-right: 150px;">
+              <i class="fa-regular fa-thumbs-down dislikeIcon" onclick="changeicon()"
+                style="color: #262626aa;font-size:24px;"></i>
+              <span style="font-size: 18px; color: #3a3a3a; ">Dislike</span>
+            </div>
+          
+            <div style="width: 100px; height:40px; background-color:rgb(245, 250, 255); border:1px solid rgba(105, 162, 185, 0.665); border-radius:10px; text-align:center; display:inline-block; padding:6px;">
+              <a href="#">
+                <i class="fa-regular fa-share-from-square" style="color: #416594; font-size:24px;"></i>
+                <span style="font-size: 18px; color: #416594; text-decoration:none;">Share</span>
+              </a>
+            </div>
+          </div>  
+        </div>
+    
+        <div class="d-flex align-items-center justify-content-center h-100 row mt-5" >
+          <div class="col-xl-8 container">
+            <div class="row justify-content-center mb-4">
+              <div class="col-lg-8">
+                <h5>2 Comments</h5>
+              </div>
+            </div>
+            <div class="row justify-content-center mb-4">
+              <div class="col-lg-8">
+                <div class="comments">
+                  <div class="comment d-flex mb-4">
+                    <div class="flex-shrink-0">
+                      <div class="avatar avatar-sm rounded-circle">
+                        <a href="PublicProfile.html">
+                          <img class="avatar-img" src="img/pfp.jpg" style="text-decoration: none;">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 ms-2 ms-sm-3">
+                      <div class="comment-meta d-flex align-items-baseline">
+                        <h6 class="me-2"> <a href="PublicProfile.html" style="text-decoration: none;">Ethan</a> 
+                        </h6>
+                        <span class="text-muted">2d</span>
+                      </div>
+                      <div class="comment-body">
+                        Switzerland is truly a paradise for nature lovers! The stunning mountain vistas and crystal-clear lakes left me in awe. Can't wait to go back and explore more hidden gems. This blog post provided great insights and tips to make the most of my trip. Thank you!
+                      </div>
+        
+                      <div class="comment-replies p-3 mt-3 rounded" style="background-color: rgb(245, 250, 255);">
+                        <h6 class="comment-replies-title mb-4 text-muted text-uppercase">2 replies</h6>
+        
+                        <div class="reply d-flex mb-4">
+                          <div class="flex-shrink-0">
+                            <div class="avatar avatar-sm rounded-circle">
+                              <img class="avatar-img" src="https://images.unsplash.com/photo-1501325087108-ae3ee3fad52f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=f7f448c2a70154ef85786cf3e4581e4b" alt="">
+                            </div>
+                          </div>
+                          <div class="flex-grow-1 ms-2 ms-sm-3">
+                            <div class="reply-meta d-flex align-items-baseline">
+                              <h6 class="mb-0 me-2">Brandon Smith</h6>
+                              <span class="text-muted">2d</span>
+                            </div>
+                            <div class="reply-body">
+                              I had the most amazing experience hiking in the Swiss Alps. The breathtaking landscapes and fresh mountain air rejuvenated my soul. The travel tips shared in this blog post were invaluable in planning my adventure. Highly recommended!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="reply d-flex">
+                          <div class="flex-shrink-0">
+                            <div class="avatar avatar-sm rounded-circle">
+                              <img class="avatar-img" src="https://randomuser.me/api/portraits/men/4.jpg" alt="">
+                            </div>
+                          </div>
+                          <div class="flex-grow-1 ms-2 ms-sm-3">
+                            <div class="reply-meta d-flex align-items-baseline">
+                              <h6 class="mb-0 me-2">James Parsons</h6>
+                              <span class="text-muted">1d</span>
+                            </div>
+                            <div class="reply-body">
+                              Switzerland is a haven for adventure enthusiasts! From skiing in the Swiss Alps to paragliding over picturesque valleys, there's something for everyone. The travel tips mentioned here helped me discover thrilling activities and make unforgettable memories. Kudos to the author!
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment d-flex">
+                    <div class="flex-shrink-0">
+                      <div class="avatar avatar-sm rounded-circle">
+                        <img class="avatar-img" src="https://randomuser.me/api/portraits/women/63.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="flex-shrink-1 ms-2 ms-sm-3">
+                      <div class="comment-meta d-flex">
+                        <h6 class="me-2">Jenna Roberts</h6>
+                        <span class="text-muted">4d</span>
+                      </div>
+                      <div class="comment-body">
+                        Exploring the charming Swiss towns was like stepping into a fairytale. The quaint architecture, delightful cuisine, and warm hospitality made my trip unforgettable. The travel tips in this blog post guided me to hidden local gems, allowing me to immerse myself in the Swiss culture. Thank you for the wonderful suggestions!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="comment-form d-flex align-items-center">
+                  <div class="flex-shrink-0">
+                    <div class="avatar avatar-sm rounded-circle">
+                      <img class="avatar-img" src="img/user_pfp.jpeg">
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 ms-2 ms-sm-3">
+                    <form>
+                      <textarea class="form-control py-0 px-1 border-0" rows="1" placeholder="Start writing..." style="resize: none; background-color: rgb(245, 250, 255);"></textarea>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-xl-4" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"data-aos-duration="500">
+            <div class="related-posts">
+              <h2>Related Posts</h2>
+              <div class="post">
+                <img src="img/flag.jpg" alt="Related Post 1">
+                <h3>Top 10 Hidden Gems in Switzerland</h3>
+                <p>Discover the lesser-known but breathtaking destinations in Switzerland that are off the beaten path. From secluded mountain villages to hidden lakes, this list will reveal Switzerland's best-kept secrets</p>
+                <a href="#" class="read-more">See More</a>
+              </div>
+              <div class="post">
+                <img src="img/food.jpg" alt="Related Post 2">
+                <h3>Exploring Swiss Cuisine: A Gastronomic Journey</h3>
+                <p>Indulge in the flavors of Switzerland as we take you on a gastronomic adventure. From traditional Swiss fondue to mouthwatering chocolate treats, immerse yourself in the country's culinary delights and discover the rich food culture.</p>
+                <a href="#" class="read-more">See More</a>
+              </div>
+              <div class="post">
+                <img src="img/hiking.jpg" alt="Related Post 3">
+                <h3>Hiking Trails for Nature Lovers in Switzerland</h3>
+                <p>Lace up your hiking boots and explore the stunning natural landscapes of Switzerland. This guide will take you through picturesque trails, majestic mountains, and serene alpine meadows, providing an unforgettable experience for nature enthusiasts..</p>
+                <a href="#" class="read-more">See More</a>
+              </div>
+              <div class="post">
+                <img src="img/para.jpg" alt="Related Post 4">
+                <h3>Swiss Adventure Sports: Thrills and Adrenaline</h3>
+                <p>Get your adrenaline pumping with thrilling adventure sports in Switzerland. From paragliding over scenic valleys to white-water rafting in wild rivers, this post highlights the best adventure activities for thrill-seekers visiting Switzerland.</p>
+                <a href="#" class="read-more">See More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="pg-footer">
+        <footer class="footer">
+          <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+          </svg>
+          <div class="footer-content">
+            <div class="footer-content-column">
+              <div class="footer-logo">
+                <a class="footer-logo-link" href="#">
+                  <img src="img/LOGO.png" width="200px" height="100px">
+                </a>
+              </div>
+              <div class="footer-menu">
+                <h2 class="footer-menu-name"> Legal</h2>
+                <ul id="menu-get-started" class="footer-menu-list">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                    <a href="#">Support Policy</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                    <a href="#">Terms of Use</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="footer-content-column">             
+                
+              <div class="footer-menu">
+                <h2 class="footer-menu-name">Quick Links</h2>
+                <ul id="menu-legal" class="footer-menu-list">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Home</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Features</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Places</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">About Us</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                    <a href="#">Contact Us</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-content-column">
+              <div class="footer-menu">
+                <h2 class="footer-menu-name"> Help & Support</h2>
+                <ul id="menu-quick-links" class="footer-menu-list">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a target="_blank" rel="noopener noreferrer" href="#">FAQs</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a target="_blank" rel="noopener noreferrer" href="#">Service Status</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Security</a>
+                  </li>                
+                  
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Reviews</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-content-column">
+              <div class="footer-call-to-action">
+                <h2 class="footer-call-to-action-title"> Let's Chat</h2>
+                <p class="footer-call-to-action-description"> Have a support question?</p>
+                <a class="footer-call-to-action-button button" href="#" target="_self"> Get Started </a>
+              </div>
+              <div class="footer-call-to-action">
+                <h2 class="footer-call-to-action-title"> Call Us Via</h2>
+                <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:09-967440423" target="_self"> 09-967440423</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-copyright">
+            <div class="footer-copyright-wrapper">
+              <div class="footer-icon">
+                <a href="#">
+                  <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>
+                </a>
+              </div>  
+              <p class="footer-copyright-text">
+                <a class="footer-copyright-link" href="#" target="_self"> ©2023. | Travica. | All rights reserved. </a>
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+        
+
+       
+
+      
+    
+    
+
+    <script>
+      function changeIcon() {
+        var icons = document.getElementsByClassName("heartIcon");
+        var icon = icons[0];
+      
+        if (icon.classList.contains("fa-regular")) {
+          icon.classList.remove("fa-regular");
+          icon.classList.add("fa-solid");
+        } else {
+          icon.classList.remove("fa-solid");
+          icon.classList.add("fa-regular");
+        }
+    }
+
+    function changeicon() {
+      var icons = document.getElementsByClassName("dislikeIcon");
+      var icon = icons[0]; 
+    
+      if (icon.classList.contains("fa-regular")) {
+        icon.classList.remove("fa-regular");
+        icon.classList.add("fa-solid");
+      } else {
+        icon.classList.remove("fa-solid");
+        icon.classList.add("fa-regular");
+      }
+  }
+
+  
+    AOS.init();
+  
+
+
+
+    </script>
+
+    
+</body>
+</html>

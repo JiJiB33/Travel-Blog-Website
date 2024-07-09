@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/1b18b23329.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="img/LOGO.png">
+
+    <title>Contact Us</title>
+    <style>
+        .contact-container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            
+          }
+          
+          .left-col {
+            width: 45vw;
+            height: 100%;
+            background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 20px 1px rgba(31, 31, 31, 0.658);
+          }
+          
+          .logo {
+            width: 10rem;
+            padding: 1.5rem;
+          }
+          
+          .right-col {
+            background-color: rgba(255, 255, 255, 0.451);            
+            box-shadow: 0 0 20px 1px rgba(31, 31, 31, 0.658);  
+            display: block;  
+            backdrop-filter: blur(20px);
+            width: 50vw;
+            height: 100vh;
+            padding: 5rem 3.5rem;            
+          }
+          
+          h1, label, button, .description {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+          }
+          
+          h1 {
+            color:black;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            letter-spacing: 0.5rem;
+            font-weight: 500;
+          }
+          
+          p {
+            color: black;
+            font-size: 0.9rem;
+            letter-spacing: 0.01rem;            
+            margin: 0.25rem 0;
+          }
+          
+          label, .description {
+            color: black;
+            text-transform: uppercase;
+            font-size: 0.625rem;
+          }
+          
+          #contact-form {
+            width: 31.25rem;
+            position: relative;
+            margin-top: 2rem;
+            padding: 1rem 0;
+          }
+          
+          #contact-form input, #contact-form textarea, #contact-form label {
+            width: 40vw;
+            display: block;
+          }
+          
+          #contact-form p, #contact-form placeholder, #contact-form input, #contact-form textarea {
+            font-family: 'Helvetica Neue', sans-serif;
+          }
+          
+          #contact-form input::placeholder, #contact-form textarea::placeholder {
+            color: black;
+          }
+          
+          #contact-form input, textarea {
+            color: black;
+            font-weight: 500;
+            background: var(--bg-color);
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
+            outline: none;
+          }
+          
+          #contact-form textarea {
+            resize: none;
+            background-color: transparent;
+          }
+          
+          #contact-form button {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 13px;
+            background: #027b9a;
+            transition:  0.3s;
+            color:whitesmoke;
+            width: 10rem;
+            height: 2.25rem;
+            border: none;
+            border-radius: 5px;            
+            outline: none;
+            cursor: pointer;
+            margin-top: 60px;            
+          }
+          
+          #contact-form input:hover, #contact-form textarea:hover, #contact-form button:hover {
+            opacity: 0.5;
+          }
+          
+          #contact-form button:active {
+            opacity: 0.8;
+          }
+
+          .pg-footer{
+            margin-top: 100px;
+           
+          }
+
+          
+          
+    </style>
+    
+    
+    
+    
+  
+  </head>
+
+  <body style="background-color:rgba(98, 149, 169, 0.468);">
+      <header>        
+          <div class="logo">
+            <a href="Index.html">
+                <img src="img/LOGO.png" width="120px">
+            </a>
+          </div>
+
+          <nav>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li>                
+                    <div class="dropdown">
+                      <a href="#" class="dropbtn">Places
+                        <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i>
+                      </a>
+
+                      <div class="dropdown-content">
+                        <a href="#">All </a>                        
+                        <a href="#">North America </a>
+                        <a href="#">South America </a>
+                        <a href="#">Europe</a><br>
+                        <a href="#">Asia </a>
+                        <a href="#">South-East Asia </a>                        
+                        <a href="#">Australia </a>
+                      </div>
+                    </div>
+
+                </li>
+                
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>        
+            </ul>
+          </nav>
+
+          <div class="mix">
+                <form action="" class="searchbar">
+                    <input type="text" placeholder="Search.....">
+                    <button type="submit">
+                          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff; "></i>
+                    </button>            
+                </form>         
+            
+          </div>
+
+          <div>
+            <input type="checkbox" id="started">
+            
+            <label for="started" class="Custom-btn LoginBtn1" >
+                <center>       
+                  <Span>LOGIN</Span>
+                </center>
+                
+            </label>   
+          
+              <div class="pop-up" style="z-index:3" >
+                <label for="started" class="close-btn fa fa-times"> </label>
+                
+                <div class="text">Login to continue</div>
+                <form action="#">
+                  <div class="data">
+                    <label>Email or Phone Number</label>
+                    <input type="email" required>
+                  </div>
+
+                  <div class="data">
+                    <label>Password</label>
+                    <input type="password" required>
+                  </div>
+
+                  <div class="forget-pass"><a href="#">Forget Password?</a> </div>
+
+                  <div class="social-platform">
+                    <center>
+                      <p>Or Login with</p>
+                      <div class="social-icons">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-google"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                      </center>
+
+                    </div>
+
+                    <div class="btn">
+                      <div class="inner"></div>
+                      <div>
+                        <button><a href="afterlogin.html"  style="text-decoration: none; color:white; font-weight:700; font-size:15px;">Login</a></button>
+                      </div>
+                    </div>
+
+                    <center>
+                      <div class="signup-link">Don't have an account? <a href="SignUp.html">Signup now</a></div>
+                    </center>	
+                  </form>
+                </div>
+              </div>
+            </div> 
+      </header>
+
+      <div class="contact-container">
+        <div class="left-col">
+          
+        </div>
+        <div class="right-col">
+          <h1>Get In Touch</h1>
+
+          <div>
+            <div class="information">
+              <i class="fa-solid fa-envelope" style="color: #027b9a; margin-top:14px;"></i>
+              <p>travica@gmail.com</p>
+
+              <i class="fa-solid fa-phone" style="color: #027b9a; margin-top:14px;"></i>
+              <p>09-967440423</p>
+            </div>            
+          </div>
+      
+          <form id="contact-form">
+            <label for="c-name" >Full name</label>
+            <input type="text" id="c-name" name="name" placeholder="Your Full Name" required style="background-color: transparent;">
+
+            <label for="c-email" >Email Address</label>            
+            <input type="email" id="c-email" name="email" placeholder="Your Email Address" required style="background-color: transparent;">
+
+            <label for="message">Message</label>
+            <textarea rows="4" placeholder="Your Message" id="c-message" name="message" required></textarea>
+            <center>
+                <button type="submit" id="submit" name="submit">Send</button>
+            </center>
+          </form>
+          
+        </div>
+      </div>
+
+      <div class="pg-footer">
+        <footer class="footer">
+          <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+          </svg>
+          <div class="footer-content">
+            <div class="footer-content-column">
+              <div class="footer-logo">
+                <a class="footer-logo-link" href="#">
+                  <img src="img/LOGO.png" width="200px" height="100px">
+                </a>
+              </div>
+              <div class="footer-menu">
+                <h2 class="footer-menu-name"> Legal</h2>
+                <ul id="menu-get-started" class="footer-menu-list">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                    <a href="#">Support Policy</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                    <a href="#">Terms of Use</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="footer-content-column">             
+                
+              <div class="footer-menu">
+                <h2 class="footer-menu-name">Quick Links</h2>
+                <ul id="menu-legal" class="footer-menu-list">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Home</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Features</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Places</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">About Us</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                    <a href="#">Contact Us</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-content-column">
+              <div class="footer-menu">
+                <h2 class="footer-menu-name"> Help & Support</h2>
+                <ul id="menu-quick-links" class="footer-menu-list">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a target="_blank" rel="noopener noreferrer" href="#">FAQs</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a target="_blank" rel="noopener noreferrer" href="#">Service Status</a>
+                  </li>
+
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Security</a>
+                  </li>                
+                  
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="#">Reviews</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-content-column">
+              <div class="footer-call-to-action">
+                <h2 class="footer-call-to-action-title"> Let's Chat</h2>
+                <p class="footer-call-to-action-description"> Have a support question?</p>
+                <a class="footer-call-to-action-button button" href="#" target="_self"> Get Started </a>
+              </div>
+              <div class="footer-call-to-action">
+                <h2 class="footer-call-to-action-title"> Call Us Via</h2>
+                <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:09-967440423" target="_self"> 09-967440423</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-copyright">
+            <div class="footer-copyright-wrapper">
+              <div class="footer-icon">
+                <a href="#">
+                  <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>
+                </a>
+              </div>  
+              <p class="footer-copyright-text">
+                <a class="footer-copyright-link" href="#" target="_self"> ©2023. | Travica. | All rights reserved. </a>
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+      
+
+
+
+
+
+
+    </body>
+</html>

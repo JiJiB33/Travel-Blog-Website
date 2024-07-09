@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/1b18b23329.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="Style.css">
+
+
+  <title>AfterLogin</title>
+
+  <style>
+    :root {
+        --primary: #eeeeee;
+        --secondary: #227c70;
+        --green: #82cd47;
+        --secondary-light: rgb(34, 124, 112, 0.2);
+        --secondary-light-2: rgb(127, 183, 126, 0.1);
+        --white: #fff;
+        --black: #393e46;
+      
+        --shadow: 0px 2px 8px 0px var(--secondary-light);
+      }
+
+    .profile-dropdown {
+        position: relative;
+        width: fit-content;
+        right: -100px;
+        
+      }
+      
+      .profile-dropdown-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        width: 160px;        
+        border-radius: 50px;
+        color: var(--white);
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.289);
+      
+        cursor: pointer;
+        border: 2px solid var(--secondary);
+        transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+        border 0.3s;
+      }
+      
+      .profile-dropdown-btn:hover {
+        background-color: var(--secondary-light-2);
+        box-shadow: var(--shadow);
+      }
+      
+      .profile-img {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: url(img/user_pfp.jpeg);
+        background-size: cover;
+      }
+      
+      .profile-img i {
+        position: absolute;
+        right: 0;
+        bottom: 0.3rem;
+        font-size: 0.5rem;
+        color: var(--green);        
+      }
+      
+      .profile-dropdown-btn span {
+        margin: 0 0.5rem;
+        margin-right: 0;
+      }
+      
+      .profile-dropdown-list {
+        position: absolute;
+        top: 68px;
+        width: 220px;
+        right: 0;
+        background-color: rgba(21, 124, 153, 0.326);
+        color: rgb(14, 106, 64);     
+        border-radius: 8px;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: 0px 13px 26px 0px rgba(0, 0, 0, 0.491);
+        transition: max-height 0.5s;
+        z-index: 50;
+      }
+      
+      .profile-dropdown-list hr {
+        border: 0.5px solid var(--green);
+      }
+      
+      .profile-dropdown-list.active {
+        max-height: 500px;
+      }
+      
+      .profile-dropdown-list-item {
+        padding: 0.5rem 0rem 0.5rem 1rem;
+        transition: background-color 0.2s ease-in, padding-left 0.2s;
+      }
+      
+      .profile-dropdown-list-item a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: white;
+      }
+      
+      .profile-dropdown-list-item a i {
+        margin-right: 0.8rem;
+        font-size: 1.1rem;
+        width: 2.3rem;
+        height: 2.3rem;
+        background-color: rgba(0, 95, 135, 0.785);
+        color: var(--white);
+        line-height: 2.3rem;
+        text-align: center;
+        margin-right: 1rem;
+        border-radius: 50%;
+        transition: margin-right 0.3s;
+      }
+      
+      .profile-dropdown-list-item:hover {
+        padding-left: 1.5rem;
+        background-color: var(--secondary-light);
+      }
+      
+  </style>
+</head>
+
+<body>
+    
+  <header>        
+    <div class="logo">
+        <a href="Index.html">
+            <img src="img/LOGO.png" width="120px">
+        </a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li>                
+                <div class="dropdown">
+                  <a href="#" class="dropbtn">Places
+                    <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i>
+                  </a>
+
+                  <div class="dropdown-content">
+                    <a href="#">All </a>                        
+                    <a href="#">North America </a>
+                    <a href="#">South America </a>
+                    <a href="#">Europe</a><br>
+                    <a href="#">Asia </a>
+                    <a href="#">South-East Asia </a>                        
+                    <a href="#">Australia </a>
+                  </div>
+                </div>
+
+            </li>
+
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="Contact.html">Contact</a></li>        
+        </ul>
+    </nav>
+
+    <div class="mix">
+            <form action="" class="searchbar">
+                <input type="text" placeholder="Search.....">
+                <button type="submit">
+                      <i class="fa-solid fa-magnifying-glass" style="color: #ffffff; "></i>
+                </button>            
+            </form>
+    </div>
+
+    <div class="profile-dropdown">
+        <div onclick="toggle()" class="profile-dropdown-btn">
+          <div class="profile-img">
+            <i class="fa-solid fa-circle"></i>
+          </div>
+
+          <span>
+            Markus T
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+        </div>
+
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-sliders"></i>
+              Settings
+            </a>
+          </li>
+
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+
+          <li class="profile-dropdown-list-item">
+            <a href="Index.html">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+  </header>
+
+  <div class="image-container" >
+    <img src="img/cover.jpg" >
+    <div class="search-overlay">
+      <!-- Your search box content here -->
+      <input type="text" placeholder="Let's Find Something....">
+      <button>Search</button>
+    </div>
+    <div class="content-overlay">
+      <!-- Your content overlay here -->
+      <center>
+        <h1>Welcome to Travica!</h1>
+      </center>
+      <p style="text-align: justify; font-size:13px;  line-height:1.7">Your ultimate destination for travel inspiration, adventure, and discovery! Embark on a virtual journey with us as we unravel the hidden gems and breathtaking wonders of the world. From serene landscapes to bustling cities, we bring you captivating stories, stunning visuals, and invaluable travel tips to fuel your wanderlust.</p>
+    </div>
+</div>
+
+<div class="sec-slide">
+  <center><h2 style="font-weight: 900; color:whitesmoke; background-color:#2e78b06f; width:300px; height:100px;padding-top:10px; margin-left:30px; border-radius:25px; box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.554); ">Popular Posts At This Time</h2></center>
+    <button id="prev" class="sec-btn">
+      <i class="las la-angle-left"></i>
+    </button>
+    
+    <div class="sec-card-content">
+      <!-- Card -->
+      <a href="blogpost.html" style="text-decoration: none; color:black">
+        <div class="sec-card">
+          <h4>4.7k</h4>
+          <i class="lar la-heart"></i>
+          <div class="sec-card-img">
+            <img src="img/mtlake.jpg" alt="">
+            <img class="blur" src="img/mtlake.jpg">
+          </div>
+          <div class="sec-card-text">
+            <h2>Mountain & Lake</h2>
+            <p>Explore the breathtaking beauty of towering peaks, as we take you on a journey through the majestic mountains. Discover hidden trails, stunning vistas, and the exhilaration of conquering nature's grandest masterpieces.<p>
+          </div>
+        </div>
+      </a>
+      <!-- Card End -->
+      
+      <!-- Card -->
+      <div class="sec-card">
+    <h4>4.5k</h4>
+    <i class="lar la-heart"></i>
+    <div class="sec-card-img">
+      <img src="img/mtlake.jpg">
+      <img class="blur" src="img/mtlake.jpg">
+    </div>
+    <div class="sec-card-text">
+      <h2>Mountain & Lake</h2>
+      <p>Explore the breathtaking beauty of towering peaks, as we take you on a journey through the majestic mountains. Discover hidden trails, stunning vistas, and the exhilaration of conquering nature's grandest masterpieces.<p>
+    </div>
+  </div>
+      <!-- Card End -->
+      
+          <!-- Card -->
+      <div class="sec-card">
+    <h4>4.4k</h4>
+    <i class="lar la-heart"></i>
+    <div class="sec-card-img">
+      <img src="img/mtlake.jpg">
+      <img class="blur" src="img/mtlake.jpg">
+    </div>
+    <div class="sec-card-text">
+      <h2>Mountain & Lake</h2>
+      <p>Explore the breathtaking beauty of towering peaks, as we take you on a journey through the majestic mountains. Discover hidden trails, stunning vistas, and the exhilaration of conquering nature's grandest masterpieces.<p>
+    </div>
+  </div>
+      <!-- Card End -->
+      
+          <!-- Card -->
+      <div class="sec-card">
+    <h4>4.2k</h4>
+    <i class="lar la-heart"></i>
+    <div class="sec-card-img">
+      <img src="img/mtlake.jpg">
+      <img class="blur" src="img/mtlake.jpg">
+    </div>
+    <div class="sec-card-text">
+      <h2>Mountain & Lake</h2>
+      <p>Explore the breathtaking beauty of towering peaks, as we take you on a journey through the majestic mountains. Discover hidden trails, stunning vistas, and the exhilaration of conquering nature's grandest masterpieces.<p>
+    </div>
+  </div>
+      <!-- Card End -->
+      
+          <!-- Card -->
+      <div class="sec-card">
+    <h4>4.1k</h4>
+    <i class="lar la-heart"></i>
+    <div class="sec-card-img">
+      <img src="img/mtlake.jpg">
+      <img class="blur" src="img/mtlake.jpg">
+    </div>
+    <div class="sec-card-text">
+      <h2>Mountain & Lake</h2>
+      <p>Explore the breathtaking beauty of towering peaks, as we take you on a journey through the majestic mountains. Discover hidden trails, stunning vistas, and the exhilaration of conquering nature's grandest masterpieces.<p>
+    </div>
+  </div>
+      <!-- Card End -->
+      
+          <!-- Card -->
+      <div class="sec-card">
+    <h4>4k</h4>
+    <i class="lar la-heart"></i>
+    <div class="sec-card-img">
+      <img src="img/mtlake.jpg">
+      <img class="blur" src="img/mtlake.jpg">
+    </div>
+    <div class="sec-card-text">
+      <h2>Mountain & Lake</h2>
+      <p>Explore the breathtaking beauty of towering peaks, as we take you on a journey through the majestic mountains. Discover hidden trails, stunning vistas, and the exhilaration of conquering nature's grandest masterpieces.<p>
+    </div>
+  </div>
+      <!-- Card End -->
+      
+    </div>
+     <button id="next" class="sec-btn">
+      <i class="las la-angle-right"></i>
+    </button>
+</div>
+
+<center><h2 style="font-weight: 900; color:whitesmoke; background-color:#2e78b06f; width:300px; height:100px;padding-top:25px; margin-left:30px; margin-top:100px; border-radius:25px; box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.554); ">Recent Posts</h2></center>
+
+<div class="cards">
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
+      </div>
+      <div class="card-title">
+        <a href="blogpost.html" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="blogpost.html" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?beach" alt="beach" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?mountain" alt="mountain" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?water" alt="water" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?river" alt="river" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?kite" alt="kite" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?underwater" alt="underwater" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="https://source.unsplash.com/300x225/?desert" alt="desert" />
+      </div>
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+          Lost in Wanderlust
+            <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+        </div>
+        <div class="card-flap flap2">
+          <div class="card-actions">
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?desert" alt="desert" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?desert" alt="desert" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?desert" alt="desert" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-holder">
+          <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
+        </div>
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+            Lost in Wanderlust
+              <small>Embrace the Unknown, Find Yourself in Wanderlust</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            Escape the ordinary and embark on extraordinary travel experiences with our wanderlust-inspired tales.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <button class="prev-btn">Previous</button>
+        <button class="next-btn">Next</button>
+      </div>
+</div>
+
+<div class="pg-footer">
+  <footer class="footer">
+    <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+      <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+    </svg>
+    <div class="footer-content">
+      <div class="footer-content-column">
+        <div class="footer-logo">
+          <a class="footer-logo-link" href="#">
+            <img src="img/LOGO.png" width="200px" height="100px">
+          </a>
+        </div>
+        <div class="footer-menu">
+          <h2 class="footer-menu-name"> Legal</h2>
+          <ul id="menu-get-started" class="footer-menu-list">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434">
+              <a href="#">Privacy Policy</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-product">
+              <a href="#">Support Policy</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-product">
+              <a href="#">Terms of Use</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content-column">             
+          
+        <div class="footer-menu">
+          <h2 class="footer-menu-name">Quick Links</h2>
+          <ul id="menu-legal" class="footer-menu-list">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">Home</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">Features</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">Places</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">About Us</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-product">
+              <a href="#">Contact Us</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content-column">
+        <div class="footer-menu">
+          <h2 class="footer-menu-name"> Help & Support</h2>
+          <ul id="menu-quick-links" class="footer-menu-list">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+              <a target="_blank" rel="noopener noreferrer" href="#">FAQs</a>
+            </li>
+
+            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+              <a target="_blank" rel="noopener noreferrer" href="#">Service Status</a>
+            </li>
+
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">Security</a>
+            </li>                
+            
+            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="#">Reviews</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content-column">
+        <div class="footer-call-to-action">
+          <h2 class="footer-call-to-action-title"> Let's Chat</h2>
+          <p class="footer-call-to-action-description"> Have a support question?</p>
+          <a class="footer-call-to-action-button button" href="#" target="_self"> Get Started </a>
+        </div>
+        <div class="footer-call-to-action">
+          <h2 class="footer-call-to-action-title"> Call Us Via</h2>
+          <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:09-967440423" target="_self"> 09-967440423</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="footer-copyright-wrapper">
+        <div class="footer-icon">
+          <a href="#">
+            <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>
+          </a>
+        </div>  
+        <p class="footer-copyright-text">
+          <a class="footer-copyright-link" href="#" target="_self"> ©2023. | Travica. | All rights reserved. </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    let profileDropdownList = document.querySelector(".profile-dropdown-list");
+    let btn = document.querySelector(".profile-dropdown-btn");
+
+    let classList = profileDropdownList.classList;
+
+    const toggle = () => classList.toggle("active");
+
+    window.addEventListener("click", function (e) {
+    if (!btn.contains(e.target)) classList.remove("active");
+    });
+
+    $(document).ready(function () {
+      var zindex = 10;
+    
+      $("div.card").click(function (e) {
+        e.preventDefault();
+    
+        var isShowing = false;
+    
+        if ($(this).hasClass("show")) {
+          isShowing = true;
+        }
+    
+        if ($("div.cards").hasClass("showing")) {
+          // a card is already in view
+          $("div.card.show").removeClass("show");
+    
+          if (isShowing) {
+            // this card was showing - reset the grid
+            $("div.cards").removeClass("showing");
+          } else {
+            // this card isn't showing - get in with it
+            $(this).css({ zIndex: zindex }).addClass("show");
+          }
+    
+          zindex++;
+        } else {
+          // no cards in view
+          $("div.cards").addClass("showing");
+          $(this).css({ zIndex: zindex }).addClass("show");
+    
+          zindex++;
+        }
+      });
+    });
+
+    $(document).ready(function() {
+      var cards = $(".cards .card");
+      var cardCount = cards.length;
+      var cardsPerPage = 8; // Number of cards to display per page
+      var currentPage = 1;
+      var totalPages = Math.ceil(cardCount / cardsPerPage);
+    
+      function showPage(page) {
+        var startIndex = (page - 1) * cardsPerPage;
+        var endIndex = startIndex + cardsPerPage;
+    
+        cards.hide();
+        cards.slice(startIndex, endIndex).show();
+      }
+    
+      function updatePaginationButtons() {
+        $(".prev-btn").prop("disabled", currentPage === 1);
+        $(".next-btn").prop("disabled", currentPage === totalPages);
+      }
+    
+      function goToPreviousPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
+          updatePaginationButtons();
+        }
+      }
+    
+      function goToNextPage() {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+          updatePaginationButtons();
+        }
+      }
+    
+      $(".prev-btn").click(goToPreviousPage);
+      $(".next-btn").click(goToNextPage);
+    
+      showPage(currentPage);
+      updatePaginationButtons();
+    });
+
+
+// -=-//
+      const next=document.querySelector('#next');
+      const prev=document.querySelector('#prev');
+
+      function handleScrollNext (direction) {
+      const cards = document.querySelector('.card-content');
+          cards.scrollLeft=cards.scrollLeft += window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100;
+      }
+
+      function handleScrollPrev (direction) {
+          const cards = document.querySelector('.card-content');
+          cards.scrollLeft=cards.scrollLeft -= window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100;
+      }
+
+      next.addEventListener('click', handleScrollNext);
+      prev.addEventListener('click', handleScrollPrev);
+
+
+  </script>
+
+
+</body>
+</html>
